@@ -1,3 +1,3 @@
-<div class="px-4"> {{-- Adjust padding/margin as needed for placement in topbar --}}
+<div class="px-4">
     @livewire('language-switcher')
 </div>
