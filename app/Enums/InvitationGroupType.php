@@ -25,4 +25,14 @@ enum InvitationGroupType: string implements HasLabel
     {
         return array_column(self::cases(), 'value');
     }
+
+    public function getIcon(): string
+    {
+        return match ($this) {
+            self::MANAGERS => 'heroicon-o-user-tie',
+            self::PEERS => 'heroicon-o-users',
+            self::SUBORDINATES => 'heroicon-o-user-group',
+            self::FRIENDS_AND_FAMILY => 'heroicon-o-heart',
+        };
+    }
 }

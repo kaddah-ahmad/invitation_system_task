@@ -48,7 +48,7 @@ class ManageInvitations extends ListRecords
         $tabs = [];
         foreach (InvitationGroupType::cases() as $group) {
             $tabs[$group->value] = Tab::make($group->getLabel())
-                ->icon($group->getIcon()) // Assuming you added getIcon() to enum
+                ->icon($group->getIcon())
                 ->modifyQueryUsing(fn(Builder $query) => $query->where('group_type', $group->value))
                 ->badge(Invitation::query()->where('group_type', $group->value)->count());
         }
